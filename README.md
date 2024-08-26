@@ -75,7 +75,7 @@ A test suite is provided in the folder named `spec` using Rspec to ensure the pr
 
 To run the tests, follow the steps below.
 
-- Install Rspec. (https://rspec.info/documentation/)
+- [Install Rspec.](https://rspec.info/documentation/)
 
 - Run tests.
 
