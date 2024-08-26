@@ -1,5 +1,6 @@
 require 'rspec'
-require_relative '../solution'  # Adjust the path if needed
+require_relative '../../lib/sequence_analyzer/sequence_analyzer'
+require_relative '../../lib/sequence_analyzer/text_processor'
 
 RSpec.describe SequenceAnalyzer do
   let(:file_path) { 'spec/test_file.txt' }

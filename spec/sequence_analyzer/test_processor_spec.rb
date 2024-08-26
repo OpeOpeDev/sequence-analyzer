@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../solution'  # Adjust the path if needed
+require_relative '../../lib/sequence_analyzer/text_processor'
 
 RSpec.describe TextProcessor do
   describe '.clean_text' do

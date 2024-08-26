@@ -1,1 +1,2 @@
-large_test_file.txt
+# Ignore generated large test files
+data/large_test_file.txt
