@@ -15,6 +15,37 @@ This README provides an overview of the project, outlines problems faced, and so
 - **Text Processing**: The program ignores punctuation, line endings, and is not case-sensitive. `Achieved`
 - **Testing**: A test suite is included to check the program's functionality. `Achieved`
 
+## Project Structure
+
+```plaintext
+bin/
+  ├── file_generator_cli.rb           # CLI for the large file generator tool
+  └── sequence_analyzer_cli.rb        # CLI for the sequence analyzer tool
+
+data/
+  ├── large_test_file.txt             # Sample large text file
+  ├── pride_and_prejudice.txt         # Example text file for analysis
+  └── sense_and_sensibility.txt       # Another example text file for analysis
+
+lib/
+  ├── file_generator/
+  │   └── file_generator.rb           # Core logic for generating large files
+  └── sequence_analyzer/
+      ├── sequence_analyzer.rb        # Core logic for analyzing sequences in text
+      └── text_processor.rb           # Text processing utilities used by the analyzer
+
+spec/
+  ├── file_generator/
+  │   └── file_generator_spec.rb      # Tests for the large file generator
+  └── sequence_analyzer/
+      ├── sequence_analyzer_spec.rb   # Tests for the sequence analyzer in text
+      └── text_processor_spec.rb      # Tests for the text processor
+
+.gitignore                            # Specifies files to be ignored by Git
+README.md                             # Project overview and instructions
+
+```
+
 ## How to Run the Project
 
 1. **Clone the Project**
@@ -37,7 +68,7 @@ This README provides an overview of the project, outlines problems faced, and so
 
    ```
    cd path/to/your/project
-   ruby solution.rb pride_and_prejudice.txt sense_and_sensibility.txt
+   ruby bin/sequence_analyzer.rb data/pride_and_prejudice.txt data/sense_and_sensibility.txt
    ```
 
 1. **View the Output**
@@ -58,20 +89,17 @@ This README provides an overview of the project, outlines problems faced, and so
 
    - Run the script to create a large test file:
      ```
-     ruby generate_large_file.rb
+     ruby bin/file_generator_cli.rb
      ```
    - This will create a file named `large_test_file.txt` for testing.
    - Then, run the following command.
      ```
-     ruby solution.rb large_test_file.txt
+     ruby bin/sequence_analyzer.rb data/large_test_file.txt
      ```
 
 ## Testing
 
 A test suite is provided in the folder named `spec` using Rspec to ensure the program works correctly:
-
-- **`test_processor_spec.rb`**: Tests the `TextProcessor` module for cleaning text, extracting sequences, and counting.
-- **`sequence_analyzer_spec.rb`**: Tests the `SequenceAnalyzer` class using temporary files.
 
 To run the tests, follow the steps below.
 
@@ -119,7 +147,7 @@ To run the tests, follow the steps below.
 
 - **Problem**: It is needed to ensure the program works well with large files.
 
-- **Solution**: Created `generate_large_file.rb` to generate large test files by combining text. This helps test performance. Additionally, processing files in chunks instead of loading everything at once could improve memory management and speed.
+- **Solution**: Created `file_generator_cli.rb` to generate large test files by combining text. This helps test performance. Additionally, processing files in chunks instead of loading everything at once could improve memory management and speed.
 
 ### 4. Flexible Sequence Length
 
