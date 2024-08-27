@@ -50,9 +50,7 @@ README.md                             # Project overview and instructions
 
 1. **Clone the Project**
 
-   Run the following command in command line or terminal.
-
-   ```
+   ```sh
     git clone https://github.com/crazyfullstack/sequence-analyzer.git
    ```
 
@@ -63,11 +61,13 @@ README.md                             # Project overview and instructions
 
 1. **Run the Text Sequence Analyzer**:
 
-   Run the script with one or more file paths in command line or terminal.  
-   For example:
+   Run the script with one or more file paths. For example:
 
-   ```
+   ```sh
    cd path/to/your/project
+   ```
+
+   ```sh
    ruby bin/sequence_analyzer.rb data/pride_and_prejudice.txt data/sense_and_sensibility.txt
    ```
 
@@ -76,24 +76,25 @@ README.md                             # Project overview and instructions
    The script will display the 100 most common three-word sequences and their counts in the console.  
    For example:
 
-   ```
-    i am sure - 129
-    as soon as - 114
-    i do not - 106
-    ...
+   ```output
+   # This is output
+   i am sure - 129
+   as soon as - 114
+   i do not - 106
+   ...
    ```
 
 1. **Generate Large Test File (Optional)**
 
-   - To test performance with large files, use the `generate_large_file.rb` script.
+   - To test performance with large files, use the `file_generator_cli.rb` script.
 
    - Run the script to create a large test file:
-     ```
+     ```sh
      ruby bin/file_generator_cli.rb
      ```
    - This will create a file named `large_test_file.txt` for testing.
    - Then, run the following command.
-     ```
+     ```sh
      ruby bin/sequence_analyzer.rb data/large_test_file.txt
      ```
 
@@ -107,7 +108,7 @@ To run the tests, follow the steps below.
 
 - Run tests.
 
-  ```
+  ```sh
   rspec
   ```
 
@@ -131,8 +132,8 @@ To run the tests, follow the steps below.
 
   Here, `m` is much smaller than `n`, so the major time-consuming part is cleaning, extracting and counting.
 
-  ```sh
-  $ ruby solution.rb large_test_file.txt
+  ```output
+  # This is output
   Time to read large_test_file.txt: 0.0099309 seconds
   Time to clean text: 0.9742052 seconds
   Time to extract sequences: 1.2264264 seconds
@@ -145,7 +146,7 @@ To run the tests, follow the steps below.
 
 ### 3. Testing with Large Files
 
-- **Problem**: It is needed to ensure the program works well with large files.
+- **Problem**: It is important to ensure the program works well with large files.
 
 - **Solution**: Created `file_generator_cli.rb` to generate large test files by combining text. This helps test performance. Additionally, processing files in chunks instead of loading everything at once could improve memory management and speed.
 
