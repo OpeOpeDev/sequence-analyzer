@@ -5,13 +5,13 @@ module LargeFileGenerator
     
     words = process_words(content1, content2)
     
-    synthetic_content = generate_synthetic_text(words, num_sentences)
     
     target_size_bytes = target_size_mb * 1024 * 1024
     
     generated_content = ""
     
     while generated_content.bytesize < target_size_bytes
+      synthetic_content = generate_synthetic_text(words, num_sentences)
       generated_content += synthetic_content
     end
     
